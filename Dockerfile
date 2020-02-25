@@ -18,5 +18,7 @@ RUN apk update && \
     chmod 0600 /home/admin/.ssh/authorized_keys && \
     chown -R admin:admin /home/admin
 
+COPY sshd_config /etc/ssh/sshd_config
+
 CMD ["/usr/sbin/sshd", "-D"]
 
